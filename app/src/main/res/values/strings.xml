@@ -8,6 +8,20 @@
     <string name="mobile_number">Mobile number</string>
     <string name="city">City</string>
     <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="please_enter_full_name">Please enter full name</string>
+    <string name="enter_email">Please enter email</string>
+    <string name="enter_correct_email">Please enter correct email</string>
+    <string name="enter_mobile_number">Please enter mobile number</string>
+    <string name="length_should_be_ton">Mobile length should be minimum 10 characters</string>
+    <string name="enter_city">Please enter city</string>
+    <string name="please_select_gender">Please select gender</string>
+    <string name="select_gender">Select Gender</string>
+    <string name="enter_password">Please enter password</string>
+    <string name="password_length">Password length should be minimum 6 characters</string>
+    <string name="don_t_have_account_signup">Don\'t have account? SignUp</string>
+    <string name="update">Update</string>
+    <string name="profile">Profile</string>
 
     <string-array name="gender_array">
         <item>Select Gender</item>

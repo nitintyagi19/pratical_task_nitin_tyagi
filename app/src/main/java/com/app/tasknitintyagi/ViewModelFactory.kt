@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.savedstate.SavedStateRegistryOwner
 import com.app.tasknitintyagi.util.RemoteDataSource
 import com.app.tasknitintyagi.viewModel.HomeViewModel
+import com.app.tasknitintyagi.viewModel.LoginViewModel
 import com.app.tasknitintyagi.viewModel.SignUpViewModel
 
 
@@ -32,6 +33,8 @@ class ViewModelFactory(
                 SignUpViewModel(baseApplication, remoteDataSource)
             isAssignableFrom(HomeViewModel::class.java) ->
                 HomeViewModel(baseApplication, remoteDataSource)
+            isAssignableFrom(LoginViewModel::class.java) ->
+                LoginViewModel(baseApplication, remoteDataSource)
             else ->
                 throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }

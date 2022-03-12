@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.app.tasknitintyagi.viewModel.SignUpViewModel" />
+            type="com.app.tasknitintyagi.viewModel.LoginViewModel" />
 
     </data>
 
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        tools:context=".ui.signup.SignupActivity">
+        tools:context=".ui.LoginActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -41,30 +41,17 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:id="@+id/tvSingUp"
+                        android:id="@+id/tvLogin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
-                        android:text="@string/signup"
+                        android:text="@string/login"
                         android:textColor="@color/black"
                         android:textSize="22sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <EditText
-                        android:id="@+id/etFullName"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:hint="@string/full_name"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/color_black_light"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvSingUp"/>
 
                     <EditText
                         android:id="@+id/etEmail"
@@ -74,52 +61,12 @@
                         android:hint="@string/email"
                         android:inputType="textEmailAddress"
                         android:maxLength="30"
-                        android:textColor="@color/black"
+                        android:textColor="@color/color_black_light"
                         android:textColorHint="@color/color_black_light"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/etFullName">
+                        app:layout_constraintTop_toBottomOf="@id/tvLogin"/>
 
-                    </EditText>
-
-                    <EditText
-                        android:id="@+id/etMobileNumber"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:hint="@string/mobile_number"
-                        android:inputType="phone"
-                        android:maxLength="12"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/color_black_light"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/etEmail"/>
-
-
-                    <EditText
-                        android:id="@+id/etCity"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:hint="@string/city"
-                        android:inputType="text"
-                        android:maxLines="1"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/color_black_light"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/etMobileNumber"/>
-
-                    <Spinner
-                        android:id="@+id/genderSpn"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="16dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/etCity"
-                        android:entries="@array/gender_array"/>
 
                     <EditText
                         android:id="@+id/etPassword"
@@ -129,29 +76,40 @@
                         android:hint="@string/password"
                         android:inputType="textPassword"
                         android:maxLength="10"
-                        android:textColor="@color/black"
+                        android:textColor="@color/color_black_light"
                         android:textColorHint="@color/color_black_light"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/genderSpn">
+                        app:layout_constraintTop_toBottomOf="@id/etEmail">
 
                     </EditText>
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btnSignup"
+                        android:id="@+id/btnLogin"
                         android:layout_width="0dp"
                         android:layout_height="55dp"
                         android:layout_marginTop="32dp"
                         android:background="@color/purple_500"
-                        android:text="@string/signup"
+                        android:text="@string/login"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/etPassword">
+                        app:layout_constraintTop_toBottomOf="@id/etPassword"/>
 
-                    </androidx.appcompat.widget.AppCompatButton>
+                   <TextView
+                       android:id="@+id/signUpText"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toBottomOf="@id/btnLogin"
+                       android:layout_marginTop="30dp"
+                       android:text="@string/don_t_have_account_signup"
+                       android:textSize="16sp"
+                       android:textColor="@color/black"
+                       />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

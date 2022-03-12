@@ -15,27 +15,26 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.HomeActivity">
+        android:layout_height="match_parent">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
+            android:background="@color/purple_500"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/purple_500"
+            app:tabTextAppearance="@style/tabTheme"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tabTextAppearance="@style/tabTheme"
             app:tabTextColor="@android:color/white" />
 
         <androidx.viewpager.widget.ViewPager
-            android:id="@+id/mainViewPager"
+            android:id="@+id/viewPagerOne"
             android:layout_width="match_parent"
             android:layout_height="0sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

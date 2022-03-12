@@ -4,5 +4,6 @@ data class FeedListModelItem(
     val city: String,
     val first_name: String,
     val id: Int,
-    val last_name: String
+    val last_name: String,
+    var isSelected : Boolean = false
 )

@@ -9,22 +9,21 @@
 
         <variable
             name="viewModel"
-            type="com.app.tasknitintyagi.viewModel.SignUpViewModel" />
+            type="com.app.tasknitintyagi.viewModel.HomeViewModel" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        tools:context=".ui.signup.SignupActivity">
+        android:background="@color/white">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent">
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -45,7 +44,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
-                        android:text="@string/signup"
+                        android:text="@string/profile"
                         android:textColor="@color/black"
                         android:textSize="22sp"
                         android:textStyle="bold"
@@ -64,9 +63,10 @@
                         android:textColorHint="@color/color_black_light"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvSingUp"/>
+                        app:layout_constraintTop_toBottomOf="@id/tvSingUp" />
 
                     <EditText
+                        android:enabled="false"
                         android:id="@+id/etEmail"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
                         android:hint="@string/email"
                         android:inputType="textEmailAddress"
                         android:maxLength="30"
-                        android:textColor="@color/black"
+                        android:textColor="@color/color_black_light"
                         android:textColorHint="@color/color_black_light"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +94,7 @@
                         android:textColorHint="@color/color_black_light"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/etEmail"/>
+                        app:layout_constraintTop_toBottomOf="@id/etEmail" />
 
 
                     <EditText
@@ -109,19 +109,20 @@
                         android:textColorHint="@color/color_black_light"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/etMobileNumber"/>
+                        app:layout_constraintTop_toBottomOf="@id/etMobileNumber" />
 
                     <Spinner
                         android:id="@+id/genderSpn"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="16dp"
+                        android:entries="@array/gender_array"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/etCity"
-                        android:entries="@array/gender_array"/>
+                        app:layout_constraintTop_toBottomOf="@id/etCity" />
 
                     <EditText
+                        android:enabled="false"
                         android:id="@+id/etPassword"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -129,7 +130,7 @@
                         android:hint="@string/password"
                         android:inputType="textPassword"
                         android:maxLength="10"
-                        android:textColor="@color/black"
+                        android:textColor="@color/color_black_light"
                         android:textColorHint="@color/color_black_light"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -138,12 +139,12 @@
                     </EditText>
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btnSignup"
+                        android:id="@+id/btnUpdate"
                         android:layout_width="0dp"
                         android:layout_height="55dp"
                         android:layout_marginTop="32dp"
                         android:background="@color/purple_500"
-                        android:text="@string/signup"
+                        android:text="@string/update"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:textSize="18sp"
@@ -161,5 +162,4 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

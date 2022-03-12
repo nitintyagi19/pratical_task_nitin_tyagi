@@ -8,32 +8,32 @@ class AppData(var context: Context) {
 
     private var prefs = context.getSharedPreferences("AppData", Context.MODE_PRIVATE)
 
-    private val isLogin = "isLogin"
-    private val loginData = "loginData"
-    private val staffData = "staffData"
-
-
-
+    private val email = "email"
+    private val password = "password"
 
     fun getPrefs(): SharedPreferences {
         return prefs
     }
 
-  /*  fun setUserData(loginData: LoginData) {
-        val json = Gson().toJson(loginData)
+    fun setEmail(email: String) {
         val editor = prefs.edit()
-        editor.putString(this.loginData, json)
+        editor.putString(this.email, email)
         editor.apply()
-    }*/
+    }
 
-   /* fun getUserData(): LoginData? {
-        var json = prefs.getString(this.loginData, "").toString()
-        return if (json.isNullOrEmpty()) {
-            null
-        } else {
-            Gson().fromJson(json, LoginData::class.java) as LoginData
-        }
-    }*/
+    fun getEmail(): String {
+        return prefs.getString(this.email, "").toString()
+    }
+
+    fun setPassword(password: String) {
+        val editor = prefs.edit()
+        editor.putString(this.password, email)
+        editor.apply()
+    }
+
+    fun getPassword(): String {
+        return prefs.getString(this.password, "").toString()
+    }
 
 
     companion object {

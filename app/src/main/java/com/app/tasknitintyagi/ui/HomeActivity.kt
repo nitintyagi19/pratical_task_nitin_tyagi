@@ -7,10 +7,13 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.app.tasknitintyagi.R
 import com.app.tasknitintyagi.databinding.ActivityMainBinding
+import com.app.tasknitintyagi.ui.adapter.ViewPagerAdapter
 import com.app.tasknitintyagi.util.AppDialog
 import com.app.tasknitintyagi.util.Resource
+import com.app.tasknitintyagi.util.Utility
 import com.app.tasknitintyagi.util.getViewModelFactory
 import com.app.tasknitintyagi.viewModel.HomeViewModel
+import com.google.android.material.tabs.TabLayout
 
 
 class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>() {
@@ -33,7 +36,8 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>() {
                         Resource.Status.SUCCESS -> {
                             mViewModel.showProgress.value = false
                             resource.data?.let {
-                                Log.e("data", " ${it.size}")
+                               Utility.CityList = it
+                                setupViewPager()
                             }
                         }
                         Resource.Status.ERROR -> {
@@ -45,4 +49,14 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>() {
             })
     }
 
+    private fun setupViewPager() {
+        var title = ArrayList<String>()
+        title.add("Feeds")
+        title.add("Profile")
+
+        val viewPager = mBinding.mainViewPager
+        viewPager.adapter = ViewPagerAdapter(title, applicationContext, supportFragmentManager)
+        val tabs: TabLayout = mBinding.tabLayout
+        tabs.setupWithViewPager(viewPager)
+    }
 }
