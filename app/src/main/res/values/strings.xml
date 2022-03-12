@@ -22,6 +22,7 @@
     <string name="don_t_have_account_signup">Don\'t have account? SignUp</string>
     <string name="update">Update</string>
     <string name="profile">Profile</string>
+    <string name="search">Search</string>
 
     <string-array name="gender_array">
         <item>Select Gender</item>

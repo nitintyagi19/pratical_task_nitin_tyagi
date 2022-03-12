@@ -67,6 +67,10 @@ class CityAdapter(
         return position
     }
 
+    fun updateList(list: java.util.ArrayList<FeedListModelItem>) {
+        mList = list
+        notifyDataSetChanged()
+    }
 }
 
 

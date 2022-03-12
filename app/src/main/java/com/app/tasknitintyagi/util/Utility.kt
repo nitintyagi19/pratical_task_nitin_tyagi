@@ -37,4 +37,20 @@ object Utility {
         val inputMethodManager = context.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
+
+    fun getFilter(search: String, state: ArrayList<FeedListModelItem>): List<FeedListModelItem>? {
+        val filterList: MutableList<FeedListModelItem> = ArrayList()
+        return if (search.isEmpty()) {
+            state
+        } else {
+            for (row in state) {
+                if (row.first_name.toLowerCase().contains(search.toLowerCase())||
+                    row.last_name.toLowerCase().contains(search.toLowerCase())||
+                    row.city.toLowerCase().contains(search.toLowerCase())) {
+                    filterList.add(row)
+                }
+            }
+            filterList
+        }
+    }
 }

@@ -1,13 +1,17 @@
 package com.app.tasknitintyagi.ui.fragments
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.tasknitintyagi.R
+import com.app.tasknitintyagi.databinding.FragmentMainBinding
 import com.app.tasknitintyagi.model.FeedListModelItem
 import com.app.tasknitintyagi.ui.adapter.CityAdapter
 import com.app.tasknitintyagi.ui.adapter.ItemClick
@@ -18,16 +22,24 @@ import com.app.tasknitintyagi.util.Utility.isSelectionEnable
 class NewYorkFragment : Fragment(), ItemClick {
 
     private var mAdapter: CityAdapter? = null
-    var cityList: RecyclerView? = null
+    lateinit var binding: FragmentMainBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var view = inflater.inflate(R.layout.fragment_main, container, false)
-        cityList = view.findViewById<RecyclerView>(R.id.cityList)
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false)
+
+        binding.searchItem.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                mAdapter!!.updateList(Utility.getFilter(s.toString(), Utility.getListFilter("NewYork")) as java.util.ArrayList<FeedListModelItem>)
+            }
+            override fun afterTextChanged(s: Editable) {}
+        })
         setAdapterData()
-        return view
+        return binding.root
     }
 
     /**
@@ -42,8 +54,8 @@ class NewYorkFragment : Fragment(), ItemClick {
         }else{
             mAdapter!!.setClickEnable(false)
         }
-        cityList!!.layoutManager = layoutManager
-        cityList!!.adapter = mAdapter
+        binding.cityList.layoutManager = layoutManager
+        binding.cityList.adapter = mAdapter
     }
 
     override fun onNotifydata() {
