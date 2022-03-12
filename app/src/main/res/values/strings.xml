@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TaskNitinTyagi</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="signup">SignUp</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="mobile_number">Mobile number</string>
+    <string name="city">City</string>
+    <string name="password">Password</string>
+
+    <string-array name="gender_array">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+</resources>
